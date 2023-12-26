@@ -1,8 +1,8 @@
 #include "spaceship.h"
 
 
-Spaceship::Spaceship(raylib::Vector2 initialPos)
-: GameObject(initialPos, texturePath_, 1.0, 0.0)
+Spaceship::Spaceship(raylib::Vector2 initialPos, std::string texturePath, float initialScale, float initialRot) {}
+: PhysicsObject(initialPos, texturePath_, 1.0, 0.0)
 , health_(maxHealth_)
 {
 }
@@ -16,7 +16,7 @@ void Spaceship::update()
     if(IsKeyDown(KEY_D))
         rotate(rotationSpeed_);
 
-    GameObject::update();
+    PhysicsObject::update();
 }
 
 int Spaceship::getHealth() const

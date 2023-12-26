@@ -8,7 +8,9 @@ set(SRC_FILES
         ${CMAKE_CURRENT_LIST_DIR}/src/gamemanager.cpp
         ${CMAKE_CURRENT_LIST_DIR}/src/gameobject.cpp
         ${CMAKE_CURRENT_LIST_DIR}/src/projectile.cpp
-        ${CMAKE_CURRENT_LIST_DIR}/src/spaceship.cpp)
+        ${CMAKE_CURRENT_LIST_DIR}/src/spaceship.cpp
+        ${CMAKE_CURRENT_LIST_DIR}/src/physicobject.cpp
+)
 
 set(INCLUDE_DIRS
         ${CMAKE_CURRENT_LIST_DIR}/raylib-cpp/v451
