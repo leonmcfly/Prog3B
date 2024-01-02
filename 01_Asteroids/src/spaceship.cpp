@@ -1,7 +1,7 @@
 #include "spaceship.h"
 
 
-Spaceship::Spaceship(raylib::Vector2 initialPos, std::string texturePath, float initialScale, float initialRot) {}
+Spaceship::Spaceship(raylib::Vector2 initialPos, std::string texturePath, float initialScale, float initialRot)
 : PhysicsObject(initialPos, texturePath_, 1.0, 0.0)
 , health_(maxHealth_)
 {

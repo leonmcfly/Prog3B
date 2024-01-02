@@ -1,7 +1,6 @@
 #pragma once
 
 #include "physicobject.h"
-#include "gameobject.h"
 
 #include <list>
 
@@ -15,10 +14,7 @@ private:
     int health_;
 
 public:
-    Spaceship(raylib::Vector2 initialPos, std::string texturePath, float initialScale, float initialRot)
-    : PhysicsObject(initialPos, texturePath, initialScale, initialRot){
-        setSpaceshipSpeed({0,5});
-    };
+    Spaceship(raylib::Vector2 initialPos, std::string texturePath, float initialScale, float initialRot);
 
     void update() override;
 
