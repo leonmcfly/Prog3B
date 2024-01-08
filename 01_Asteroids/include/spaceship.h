@@ -10,6 +10,7 @@ private:
     const float movementSpeed_ = 4.0;
     const float rotationSpeed_ = 4.5;
     const int maxHealth_ = 100;
+    float thrust = 100;
 
     int health_;
 

@@ -33,7 +33,12 @@ void GameManager::spawnSpaceship()
 {
     raylib::Vector2 shipPos = generateRandomPos();
 
-    auto ship = std::make_shared<Spaceship>(shipPos);
+    static const std::string texture = "./resources/spaceship.png";
+
+    int initScale = 1;
+
+    int initRot = 90;
+    auto ship = std::make_shared<Spaceship>(shipPos, texture, initScale, initRot);
     objects_.push_back(ship);
     player_ = ship;
 }
