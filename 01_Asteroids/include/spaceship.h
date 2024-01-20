@@ -20,4 +20,6 @@ public:
     void update() override;
 
     int getHealth() const;
+
+    void handleCollision(std::shared_ptr<GameObject> other) override;
 };

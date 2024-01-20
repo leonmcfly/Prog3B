@@ -1,17 +1,18 @@
 #pragma once
 
 #include <raylib-cpp.hpp>
+#include <memory>
 
 class GameObject
 {
 private:
-    raylib::Texture tex_;
+
     bool markedForDeletion_;
 
 protected:
     float rot_;
     raylib::Vector2 pos_;
-    float scale_;
+
 
     raylib::Vector2 getOrigin() const;
 
@@ -35,4 +36,10 @@ public:
     float getRotation() const;
 
     raylib::Vector2 getPosition() const;
+
+    virtual void handleCollision(std::shared_ptr<GameObject> other);
+
+    float scale_;
+
+    raylib::Texture tex_;
 };

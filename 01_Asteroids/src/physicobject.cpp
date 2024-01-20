@@ -15,6 +15,7 @@ void PhysicsObject::update() {
     sspeed_ = sspeed_ - sspeed_ * friction;
     move(sspeed_);
     acceleration_ = 0;
+
 }
 
 void PhysicsObject::setAccelerattion(raylib::Vector2 acceleration) {

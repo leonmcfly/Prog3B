@@ -12,6 +12,6 @@ protected:
 public:
     PhysicsObject(raylib::Vector2 initialPos, std::string texturePath, float initialScale, float initialRot);
     void setSpaceshipSpeed(raylib::Vector2 speed);
-    virtual void update() override;
+    void update() override;
     void setAccelerattion(raylib::Vector2 acceleration);
 };

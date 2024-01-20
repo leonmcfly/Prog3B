@@ -78,6 +78,7 @@ void GameManager::update()
         else
             obj->update();
     }
+    checkCollisions();
 
     // Delete objects
     for(auto obj : objectsToDelete)
@@ -95,4 +96,26 @@ void GameManager::launchProjectile()
 {
     auto projectile = std::make_shared<Projectile>(player_->getPosition(), player_->getRotation());
     objects_.push_back(projectile);
+}
+
+void GameManager::checkCollisions(){
+    for(auto obj1 : objects_)
+    {
+        for(auto obj2 : objects_)
+        {
+            if(obj1 != obj2)
+            {
+                if(obj1->getPosition().CheckCollisionCircle
+                (obj1->scale_*obj1->tex_.height/2, obj2->getPosition(),obj2->tex_.height/2))
+                {
+                    obj1->handleCollision(obj2);
+                    obj2->handleCollision(obj1);
+                }
+            }
+        }
+    }
+}
+
+void GameManager::setScore(int score) {
+    score_ = score + score_;
 }

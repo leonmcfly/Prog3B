@@ -1,4 +1,6 @@
 #include "spaceship.h"
+#include "asteroid.h"
+
 
 
 Spaceship::Spaceship(raylib::Vector2 initialPos, std::string texturePath, float initialScale, float initialRot)
@@ -23,4 +25,13 @@ void Spaceship::update()
 int Spaceship::getHealth() const
 {
     return health_;
+}
+
+void Spaceship::handleCollision(std::shared_ptr<GameObject> other) {
+    std::shared_ptr<Asteroid> asteroid = std::dynamic_pointer_cast<Asteroid>(other);
+
+    if(asteroid != nullptr){
+        health_ = health_ -5;
+        asteroid->markForDeletion();
+    }
 }

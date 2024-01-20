@@ -74,3 +74,7 @@ bool GameObject::isMarkedForDeletion() const
 {
     return markedForDeletion_;
 }
+
+void GameObject::handleCollision(std::shared_ptr<GameObject> other) {
+
+}
